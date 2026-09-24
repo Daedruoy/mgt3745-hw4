@@ -29,8 +29,6 @@ Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidenc
 
 - IF a chair updates their task status, THEN THE SYSTEM SHALL reflect that status without requiring the secretary or president to follow up individually.
 
-- WHEN a brother views the central resource, THE SYSTEM SHALL display items from the past two weeks, not only the most recent entry.
-
 - WHERE acknowledgment tracking is enabled for an item, THE SYSTEM SHALL show who has and has not acknowledged it, without disclosing individual reasons for non-response.
 
 - WHEN a brother views the central resource, THE SYSTEM SHALL display items in the current view based on submission date, not event or deadline date, and WHERE an item was submitted more than two weeks ago, THE SYSTEM SHALL move it to a separate older-updates section rather than hiding it.
@@ -45,7 +43,7 @@ Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidenc
 | F-04 (acknowledgment tracking) | N/A this week | N/A | N/A | DEFERRED | Deferred per Scope, see ADR-001 |
 | F-06 (complete-details checklist) | N/A this week | N/A | N/A | DEFERRED | Deferred per Scope, see ADR-001 |
 | F-07 (chair status update) | N/A this week | N/A | N/A | DEFERRED | Deferred per Scope, see ADR-001 |
-| Survive cleared cache | Survive cleared cache | Posted an entry, then opened the page in an incognito/private browsing window, which starts with no local browser storage. | Entry remains visible in a fresh private window, since data now lives in D1 rather than localStorage. | Entry appeared correctly in the private window. Previously CANNOT TEST YET in HW3, since no server existed yet to test against. | PASS | See docs/HW4Example.gif |
+| Survive cleared cache| Posted an entry, then opened the page in an incognito/private browsing window, which starts with no local browser storage. | Entry remains visible in a fresh private window, since data now lives in D1 rather than localStorage. | Entry appeared correctly in the private window. Previously CANNOT TEST YET in HW3, since no server existed yet to test against. | PASS | See docs/HW4Example.gif |
 | POST /entries validation (400 path) | Sent a POST request via curl with an incomplete body: `{"chairName":"Prince"}`, missing the other four required fields. | Server rejects the request with a 400 status and a message naming the specific missing field. | Received `400` response reading "chair position required." Confirms the validation rule that was added, traced to the new EARS statement in Acceptance. | PASS | Terminal output, curl test |
 | Server unreachable | Not run | Page shows an error message instead of breaking silently if the network or server is down. | Would need to simulate a real network failure, like pointing the app at a fake URL. The code already catches this case and shows an error, but I haven't actually triggered and watched it happen. | CANNOT TEST YET | N/A |
 | Server returns 500 | Not run | Page shows a readable error instead of crashing if the Worker breaks unexpectedly. | Would need to force the Worker to fail, like breaking the database connection on purpose. The code already catches this and returns a readable error, but I haven't actually triggered and watched it happen. | CANNOT TEST YET | N/A |

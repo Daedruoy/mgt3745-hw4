@@ -11,7 +11,7 @@
 // Session B uses "*" so everyone's page works on the first try.
 // HW4 Craft credit: replace "*" with your page's origin once it is deployed.
 const CORS = {
-  "access-control-allow-origin": "https://improved-space-dollop-5ppq55vv7wxh5j9-5500.app.github.dev",
+  "access-control-allow-origin": "*",
   "access-control-allow-methods": "GET, POST, OPTIONS",
   "access-control-allow-headers": "content-type",
 };

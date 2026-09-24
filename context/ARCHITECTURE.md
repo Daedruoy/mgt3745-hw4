@@ -55,6 +55,9 @@ Something got harder: deleting an entry is no longer possible from the UI. My HW
 
 Also harder: offline use is now impossible. HW3 worked with no network at all; this week’s version fails to load or save anything without a live connection to Cloudflare, which is a real tradeoff for a chapter tool brothers may want to check between classes with data or bad wifi.
 
+Note: CORS is left open (`access-control-allow-origin: "*"`) rather than narrowed to a specific origin, since this Codespace's forwarded-port URL is not a fixed production address and would break for a grader running the page from a separate Codespace.
+
+
 ### Revisit trigger
 Revisit this decision if the chapter’s usage grows past what the free tier comfortably handles, if a real need for deleting or editing entries emerges, or if I gain enough experience with a Delegate-hosted option to score its Inspectability honestly rather than as an estimate.
 
